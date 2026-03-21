@@ -1,8 +1,8 @@
 'use client';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#design', label: 'Design' },
+  { href: '/about', label: 'About Us' },
+  { href: '/colors', label: 'Colors' },
   { href: '#engineered', label: 'Engineered' },
   { href: '#technology', label: 'Technology' },
   { href: '#technical-specs', label: 'Technical Specs' },
