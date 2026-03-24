@@ -4,6 +4,7 @@ interface Review {
   name: string;
   role: string;
   text: string;
+  image: string;
 }
 
 const reviews: Review[] = [
@@ -11,55 +12,67 @@ const reviews: Review[] = [
     name: 'Sarah Mitchell',
     role: 'Yoga Instructor',
     text: 'The PulseForce has completely transformed my recovery routine. The intensity is perfect for post-yoga muscle tension relief, and the portability means I can use it anywhere.',
+    image: 'https://randomuser.me/api/portraits/women/1.jpg',
   },
   {
     name: 'James Chen',
     role: 'Marathon Runner',
     text: 'As a marathon runner, I love how quiet the motor is during my recovery sessions. The battery life is exceptional, lasting through multiple long runs.',
+    image: 'https://randomuser.me/api/portraits/men/2.jpg',
   },
   {
     name: 'Emily Rodriguez',
     role: 'Physical Therapist',
     text: 'I recommend PulseForce to my patients regularly. The adjustable speed settings allow for customized therapy, and the quiet operation is perfect for a therapeutic environment.',
+    image: 'https://randomuser.me/api/portraits/women/3.jpg',
   },
   {
     name: 'Michael Brooks',
     role: 'CrossFit Athlete',
     text: 'The 4 speed settings are perfect for my training intensity. Whether I need deep tissue work or light recovery, PulseForce delivers every time.',
+    image: 'https://randomuser.me/api/portraits/men/4.jpg',
   },
   {
     name: 'Anna Kowalski',
     role: 'Office Professional',
     text: 'After sitting at my desk all day, PulseForce helps relieve the built-up tension in my neck and shoulders. It\'s become an essential part of my daily routine.',
+    image: 'https://randomuser.me/api/portraits/women/5.jpg',
   },
   {
     name: 'David Park',
     role: 'Personal Trainer',
     text: 'This is an essential tool for my clients. The power and precision help them recover faster between training sessions, improving their overall performance.',
+    image: 'https://randomuser.me/api/portraits/men/6.jpg',
   },
   {
     name: 'Lisa Thompson',
     role: 'Pilates Instructor',
     text: 'The lightweight design makes it easy to incorporate into my classes. Despite its small size, it delivers powerful results that my students love.',
+    image: 'https://randomuser.me/api/portraits/women/7.jpg',
   },
   {
     name: 'Robert Kim',
     role: 'Basketball Coach',
     text: 'My team\'s recovery has improved dramatically since we started using PulseForce. The consistent performance and reliability make it a coach\'s dream.',
+    image: 'https://randomuser.me/api/portraits/men/8.jpg',
   },
   {
     name: 'Maria Santos',
     role: 'Chiropractor',
     text: 'PulseForce complements my treatments perfectly. The precision and power help my patients maintain their adjustments between visits.',
+    image: 'https://randomuser.me/api/portraits/women/9.jpg',
   },
 ];
 
 const ReviewCard = ({ review }: { review: Review }) => (
   <div className="rounded-2xl border border-gray-800 p-6 bg-gray-900/50 backdrop-blur-sm">
     <p className="text-gray-300 mb-4 leading-relaxed">"{review.text}"</p>
-    <div>
-      <p className="font-semibold text-white">{review.name}</p>
-      <p className="text-gray-400 text-sm">{review.role}</p>
+    <div className="flex items-center gap-3 mt-4">
+      <img src={review.image} alt={review.name} width={40} height={40} className="w-10 h-10 rounded-full object-cover flex-shrink-0" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      <div>
+        <div className="font-medium">{review.name}</div>
+        <div className="text-sm text-gray-400">{review.role}</div>
+      </div>
     </div>
   </div>
 );
