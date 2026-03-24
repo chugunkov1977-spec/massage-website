@@ -1,5 +1,7 @@
 'use client';
 
+import ReviewsSection from './ReviewsSection';
+
 export default function TechnicalSpecsSection() {
   return (
     <section id="technical-specs" className="relative z-10 min-h-screen bg-white text-black flex flex-col shadow-[0_-20px_60px_rgba(0,0,0,0.3)]">
@@ -38,6 +40,7 @@ export default function TechnicalSpecsSection() {
           </div>
         </div>
       </div>
+      <ReviewsSection />
       <footer className="bg-gray-100 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
