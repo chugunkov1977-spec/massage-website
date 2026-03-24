@@ -4,7 +4,8 @@ interface Review {
   name: string;
   role: string;
   text: string;
-  image: string;
+  color: string;
+  initials: string;
 }
 
 const reviews: Review[] = [
@@ -12,55 +13,64 @@ const reviews: Review[] = [
     name: 'Sarah Mitchell',
     role: 'Yoga Instructor',
     text: 'The PulseForce has completely transformed my recovery routine. The intensity is perfect for post-yoga muscle tension relief, and the portability means I can use it anywhere.',
-    image: 'https://ui-avatars.com/api/?name=Sarah+Mitchell&background=6366f1&color=fff&size=80',
+    color: '#6366f1',
+    initials: 'SM',
   },
   {
     name: 'James Chen',
     role: 'Marathon Runner',
     text: 'As a marathon runner, I love how quiet the motor is during my recovery sessions. The battery life is exceptional, lasting through multiple long runs.',
-    image: 'https://ui-avatars.com/api/?name=James+Chen&background=8b5cf6&color=fff&size=80',
+    color: '#8b5cf6',
+    initials: 'JC',
   },
   {
     name: 'Emily Rodriguez',
     role: 'Physical Therapist',
     text: 'I recommend PulseForce to my patients regularly. The adjustable speed settings allow for customized therapy, and the quiet operation is perfect for a therapeutic environment.',
-    image: 'https://ui-avatars.com/api/?name=Emily+Rodriguez&background=ec4899&color=fff&size=80',
+    color: '#ec4899',
+    initials: 'ER',
   },
   {
     name: 'Michael Brooks',
     role: 'CrossFit Athlete',
     text: 'The 4 speed settings are perfect for my training intensity. Whether I need deep tissue work or light recovery, PulseForce delivers every time.',
-    image: 'https://ui-avatars.com/api/?name=Michael+Brooks&background=14b8a6&color=fff&size=80',
+    color: '#14b8a6',
+    initials: 'MB',
   },
   {
     name: 'Anna Kowalski',
     role: 'Office Professional',
     text: 'After sitting at my desk all day, PulseForce helps relieve the built-up tension in my neck and shoulders. It\'s become an essential part of my daily routine.',
-    image: 'https://ui-avatars.com/api/?name=Anna+Kowalski&background=f59e0b&color=fff&size=80',
+    color: '#f59e0b',
+    initials: 'AK',
   },
   {
     name: 'David Park',
     role: 'Personal Trainer',
     text: 'This is an essential tool for my clients. The power and precision help them recover faster between training sessions, improving their overall performance.',
-    image: 'https://ui-avatars.com/api/?name=David+Park&background=3b82f6&color=fff&size=80',
+    color: '#3b82f6',
+    initials: 'DP',
   },
   {
     name: 'Lisa Thompson',
     role: 'Pilates Instructor',
     text: 'The lightweight design makes it easy to incorporate into my classes. Despite its small size, it delivers powerful results that my students love.',
-    image: 'https://ui-avatars.com/api/?name=Lisa+Thompson&background=ef4444&color=fff&size=80',
+    color: '#ef4444',
+    initials: 'LT',
   },
   {
     name: 'Robert Kim',
     role: 'Basketball Coach',
     text: 'My team\'s recovery has improved dramatically since we started using PulseForce. The consistent performance and reliability make it a coach\'s dream.',
-    image: 'https://ui-avatars.com/api/?name=Robert+Kim&background=22c55e&color=fff&size=80',
+    color: '#22c55e',
+    initials: 'RK',
   },
   {
     name: 'Maria Santos',
     role: 'Chiropractor',
     text: 'PulseForce complements my treatments perfectly. The precision and power help my patients maintain their adjustments between visits.',
-    image: 'https://ui-avatars.com/api/?name=Maria+Santos&background=a855f7&color=fff&size=80',
+    color: '#a855f7',
+    initials: 'MS',
   },
 ];
 
@@ -68,7 +78,9 @@ const ReviewCard = ({ review }: { review: Review }) => (
   <div className="rounded-2xl border border-gray-800 p-6 bg-gray-900/50 backdrop-blur-sm">
     <p className="text-gray-300 mb-4 leading-relaxed">"{review.text}"</p>
     <div className="flex items-center gap-3 mt-4">
-      <img src={review.image} alt={review.name} width={40} height={40} className="w-10 h-10 rounded-full object-cover flex-shrink-0" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+      <div className="w-10 h-10 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0" style={{ backgroundColor: review.color }}>
+        {review.initials}
+      </div>
       <div>
         <div className="font-medium">{review.name}</div>
         <div className="text-sm text-gray-400">{review.role}</div>
