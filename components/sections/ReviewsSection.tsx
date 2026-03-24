@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
-
 interface Review {
   name: string;
   role: string;
-  rating: number;
   text: string;
 }
 
@@ -13,122 +10,149 @@ const reviews: Review[] = [
   {
     name: 'Sarah Mitchell',
     role: 'Yoga Instructor',
-    rating: 5,
-    text: 'The PulseForce has completely transformed my recovery routine. The intensity is perfect for post-yoga muscle tension relief, and the portability means I can use it anywhere. Highly recommended!',
+    text: 'The PulseForce has completely transformed my recovery routine. The intensity is perfect for post-yoga muscle tension relief, and the portability means I can use it anywhere.',
   },
   {
-    name: 'James Rodriguez',
-    role: 'Professional Athlete',
-    rating: 5,
-    text: 'As an athlete, I\'ve tried many massage devices. This one stands out for its power and precision. The battery life is exceptional, and it\'s become an essential part of my training regimen.',
+    name: 'James Chen',
+    role: 'Marathon Runner',
+    text: 'As a marathon runner, I love how quiet the motor is during my recovery sessions. The battery life is exceptional, lasting through multiple long runs.',
   },
   {
-    name: 'Emily Chen',
+    name: 'Emily Rodriguez',
     role: 'Physical Therapist',
-    rating: 5,
     text: 'I recommend PulseForce to my patients regularly. The adjustable speed settings allow for customized therapy, and the quiet operation is perfect for a therapeutic environment.',
   },
   {
-    name: 'Marcus Johnson',
-    role: 'Fitness Coach',
-    rating: 5,
-    text: 'My clients love this device. The build quality is outstanding, and it delivers consistent results. The ultra-quiet motor is a game-changer compared to other massage guns.',
+    name: 'Michael Brooks',
+    role: 'CrossFit Athlete',
+    text: 'The 4 speed settings are perfect for my training intensity. Whether I need deep tissue work or light recovery, PulseForce delivers every time.',
   },
   {
-    name: 'Lisa Wong',
-    role: 'Wellness Enthusiast',
-    rating: 5,
-    text: 'Worth every penny. After a long day at work, this helps me unwind and release tension. The design is sleek, the performance is reliable, and customer service was excellent.',
+    name: 'Anna Kowalski',
+    role: 'Office Professional',
+    text: 'After sitting at my desk all day, PulseForce helps relieve the built-up tension in my neck and shoulders. It\'s become an essential part of my daily routine.',
+  },
+  {
+    name: 'David Park',
+    role: 'Personal Trainer',
+    text: 'This is an essential tool for my clients. The power and precision help them recover faster between training sessions, improving their overall performance.',
+  },
+  {
+    name: 'Lisa Thompson',
+    role: 'Pilates Instructor',
+    text: 'The lightweight design makes it easy to incorporate into my classes. Despite its small size, it delivers powerful results that my students love.',
+  },
+  {
+    name: 'Robert Kim',
+    role: 'Basketball Coach',
+    text: 'My team\'s recovery has improved dramatically since we started using PulseForce. The consistent performance and reliability make it a coach\'s dream.',
+  },
+  {
+    name: 'Maria Santos',
+    role: 'Chiropractor',
+    text: 'PulseForce complements my treatments perfectly. The precision and power help my patients maintain their adjustments between visits.',
   },
 ];
 
+const ReviewCard = ({ review }: { review: Review }) => (
+  <div className="rounded-2xl border border-gray-800 p-6 bg-gray-900/50 backdrop-blur-sm">
+    <p className="text-gray-300 mb-4 leading-relaxed">"{review.text}"</p>
+    <div>
+      <p className="font-semibold text-white">{review.name}</p>
+      <p className="text-gray-400 text-sm">{review.role}</p>
+    </div>
+  </div>
+);
+
 export default function ReviewsSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? reviews.length - 1 : prevIndex - 1
-    );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === reviews.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const currentReview = reviews[currentIndex];
+  // Create three columns with 3 reviews each
+  const column1 = [reviews[0], reviews[1], reviews[2]];
+  const column2 = [reviews[3], reviews[4], reviews[5]];
+  const column3 = [reviews[6], reviews[7], reviews[8]];
 
   return (
-    <section id="reviews" className="relative z-10 min-h-screen bg-white text-black flex flex-col shadow-[0_-20px_60px_rgba(0,0,0,0.3)]">
+    <section id="reviews" className="relative z-10 min-h-screen bg-black text-white flex flex-col">
       <div className="flex-1 flex items-center justify-center px-6 py-16">
-        <div className="max-w-4xl w-full">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-            Customer Reviews
-          </h2>
-
-          {/* Review Card */}
-          <div className="bg-gray-50 rounded-lg p-8 md:p-12 mb-8 min-h-[320px] flex flex-col justify-between">
-            {/* Stars */}
-            <div className="flex justify-center mb-6">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className="text-yellow-400 text-2xl">
-                  ★
-                </span>
-              ))}
-            </div>
-
-            {/* Review Text */}
-            <p className="text-center text-gray-700 text-lg mb-8 flex-grow flex items-center justify-center">
-              "{currentReview.text}"
-            </p>
-
-            {/* Reviewer Info */}
-            <div className="text-center">
-              <p className="font-semibold text-lg mb-1">{currentReview.name}</p>
-              <p className="text-gray-600">{currentReview.role}</p>
-            </div>
+        <div className="max-w-7xl w-full">
+          {/* Title */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold mb-4">Customer Reviews</h2>
+            <p className="text-xl text-gray-400">What our customers say</p>
           </div>
 
-          {/* Navigation Arrows */}
-          <div className="flex items-center justify-center gap-6 mb-8">
-            <button
-              onClick={handlePrevious}
-              aria-label="Previous review"
-              className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition-colors duration-200"
-            >
-              ‹
-            </button>
+          {/* Reviews Container */}
+          <div className="relative max-h-[740px] overflow-hidden">
+            {/* Gradient Masks */}
+            <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
 
-            {/* Dot Indicators */}
-            <div className="flex gap-2">
-              {reviews.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  aria-label={`Go to review ${index + 1}`}
-                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentIndex ? 'bg-black' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
+            {/* Columns */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Column 1 */}
+              <div className="space-y-6 animate-scrollUp1">
+                {[...column1, ...column1].map((review, index) => (
+                  <ReviewCard key={`col1-${index}`} review={review} />
+                ))}
+              </div>
+
+              {/* Column 2 - Hidden on mobile, visible on md+ */}
+              <div className="hidden md:block space-y-6 animate-scrollUp2">
+                {[...column2, ...column2].map((review, index) => (
+                  <ReviewCard key={`col2-${index}`} review={review} />
+                ))}
+              </div>
+
+              {/* Column 3 - Hidden until lg */}
+              <div className="hidden lg:block space-y-6 animate-scrollUp3">
+                {[...column3, ...column3].map((review, index) => (
+                  <ReviewCard key={`col3-${index}`} review={review} />
+                ))}
+              </div>
             </div>
-
-            <button
-              onClick={handleNext}
-              aria-label="Next review"
-              className="w-12 h-12 flex items-center justify-center rounded-full border-2 border-black text-black hover:bg-black hover:text-white transition-colors duration-200"
-            >
-              ›
-            </button>
           </div>
-
-          {/* Review Counter */}
-          <p className="text-center text-gray-600">
-            {currentIndex + 1} / {reviews.length}
-          </p>
         </div>
       </div>
+
+      <style>{`
+        @keyframes scrollUp1 {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        @keyframes scrollUp2 {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        @keyframes scrollUp3 {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+
+        .animate-scrollUp1 {
+          animation: scrollUp1 15s linear infinite;
+        }
+
+        .animate-scrollUp2 {
+          animation: scrollUp2 19s linear infinite;
+        }
+
+        .animate-scrollUp3 {
+          animation: scrollUp3 17s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
