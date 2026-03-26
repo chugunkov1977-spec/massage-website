@@ -28,9 +28,9 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-[200vh] bg-black text-white">
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen overflow-hidden pointer-events-none">
         <ScrollSequenceBackground sectionId="hero" folders={["/assets/Frames-1"]} totalFrames={192} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-auto">
           <div className="mb-4 text-xs uppercase tracking-[0.35em] text-white/85" style={{ opacity: fade }}>
             PulseForce
           </div>
@@ -40,12 +40,13 @@ export default function HeroSection() {
           >
             PRO
           </h1>
-href="/checkout"
-  style={{ opacity: fade }}
-  className="mt-12 inline-block rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20"
->
-  Shop Now
-</a>
+          <a
+            href="/checkout"
+            style={{ opacity: fade }}
+            className="mt-12 inline-block rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20"
+          >
+            Shop Now
+          </a>
         </div>
       </div>
     </section>
