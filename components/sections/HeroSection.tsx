@@ -28,9 +28,9 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-[200vh] bg-black text-white">
-      <div className="sticky top-0 h-screen overflow-hidden pointer-events-none">
+      <div className="sticky top-0 h-screen overflow-hidden">
         <ScrollSequenceBackground sectionId="hero" folders={["/assets/Frames-1"]} totalFrames={192} />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-auto">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4 pointer-events-auto">
           <div className="mb-4 text-xs uppercase tracking-[0.35em] text-white/85" style={{ opacity: fade }}>
             PulseForce
           </div>
