@@ -97,7 +97,7 @@ export default function ReviewsSection() {
 
   return (
     <section id="reviews" className="relative z-10 min-h-screen bg-black text-white flex flex-col">
-      <div className="flex-1 flex items-center justify-center px-6 py-16">
+      <div className="flex-1 flex items-center justify-center px-6 py-10">
         <div className="max-w-7xl w-full">
           {/* Title */}
           <div className="text-center mb-16">

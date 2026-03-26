@@ -43,7 +43,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="bg-black text-white px-6 py-20">
+    <section className="bg-black text-white px-6 pt-10 pb-28">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-bold text-center">Frequently Asked Questions</h2>
         <p className="text-center text-gray-400 mt-4">Everything you need to know about PulseForce PRO</p>
