@@ -40,12 +40,12 @@ export default function HeroSection() {
           >
             PRO
           </h1>
-          <button
-            style={{ opacity: fade }}
-            className="mt-12 rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/10"
-          >
-            Shop Now
-          </button>
+href="/checkout"
+  style={{ opacity: fade }}
+  className="mt-12 inline-block rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20"
+>
+  Shop Now
+</a>
         </div>
       </div>
     </section>
