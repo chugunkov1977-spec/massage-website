@@ -42,7 +42,7 @@ export default function HeroSection() {
           </h1>
           <a
             href="/checkout"
-            style={{ opacity: fade }}
+            style={{ opacity: fade } as React.CSSProperties}
             className="mt-12 inline-block rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20"
           >
             Shop Now
