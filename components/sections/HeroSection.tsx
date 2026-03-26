@@ -42,13 +42,6 @@ export default function HeroSection() {
           >
             PRO
           </h1>
-          <button
-            onClick={() => router.push('/checkout')}
-            style={{ opacity: fade, pointerEvents: 'auto' } as React.CSSProperties}
-            className="mt-12 relative z-[9999] rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20 cursor-pointer"
-          >
-            Shop Now
-          </button>
         </div>
       </div>
     </section>
