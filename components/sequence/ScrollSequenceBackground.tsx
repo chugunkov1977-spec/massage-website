@@ -73,7 +73,7 @@ export default function ScrollSequenceBackground({ sectionId, folders, totalFram
   }, [frame, activeSlot, folders]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-black">
+    <div className="absolute inset-0 overflow-hidden bg-black pointer-events-none">
       <div className="relative h-full w-full">
         <div className="absolute inset-0">
           <img src={slotSrc[0]} alt="PulseForce sequence" className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-linear" style={{ opacity: slotOpacity[0] }} />
