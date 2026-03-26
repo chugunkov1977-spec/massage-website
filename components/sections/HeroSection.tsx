@@ -40,13 +40,13 @@ export default function HeroSection() {
           >
             PRO
           </h1>
-          <a
-            href="/checkout"
+          <button
+            onClick={() => { window.location.href = '/checkout'; }}
             style={{ opacity: fade } as React.CSSProperties}
-            className="mt-12 inline-block rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20"
+            className="mt-12 relative z-[9999] rounded-full border border-white/40 bg-black/50 px-7 py-3 text-sm uppercase tracking-[0.25em] text-white transition hover:bg-white/20 cursor-pointer"
           >
             Shop Now
-          </a>
+          </button>
         </div>
       </div>
     </section>
