@@ -1,10 +1,7 @@
 'use client';
 
 import ReviewsSection from './ReviewsSection';
-
-'use client';
-
-import ReviewsSection from './ReviewsSection';
+import FAQSection from './FAQSection';
 
 export default function TechnicalSpecsSection() {
   return (
@@ -45,6 +42,7 @@ export default function TechnicalSpecsSection() {
         </div>
       </div>
       <ReviewsSection />
+      <FAQSection />
       <footer className="bg-gray-100 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
